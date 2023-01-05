@@ -57,7 +57,6 @@
     userName = "awala10";
     userEmail = "khalad.awala@gmail.com"; 
   };
-
   programs.vim = {
     enable = true;
     extraConfig = ''
@@ -71,6 +70,8 @@
       set number relativenumber
       set path+=**
       set wildmenu
+      set noswapfile
+      set showmatch
       ''; 
 
     plugins = with pkgs.vimPlugins; [
