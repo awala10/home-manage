@@ -23,8 +23,6 @@
     pkgs.tree
     pkgs.gnupg
     pkgs.ctags
-
-
   ];
   
   programs.bash = {
@@ -40,7 +38,7 @@
       "ls *" 
       "exit" 
       "history *" 
-      "^tree" 
+      "tree *" 
     ];
   };
 #  programs.zsh = {
@@ -61,6 +59,7 @@
     enable = true;
     extraConfig = ''
       syntax on
+      filetype plugin indent on
       set nocompatible
       set hlsearch
       set autoread
