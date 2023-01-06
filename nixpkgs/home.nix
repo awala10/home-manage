@@ -1,5 +1,6 @@
-{ config, pkgs, ... }:
-
+{ config,  pkgs, ... }:
+  
+ 
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -40,6 +41,10 @@
       "history *" 
       "tree *" 
     ];
+    bashrcExtra = ''
+      shopt -s autocd
+      set -o vi
+      '';
   };
 #  programs.zsh = {
 #    enable = true;
@@ -77,6 +82,7 @@
       vim-nix
       vim-surround		 
       vim-lastplace
+      vim-gitgutter
     ];
   };
 }
