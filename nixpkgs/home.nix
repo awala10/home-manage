@@ -77,6 +77,9 @@
       set wildmenu
       set noswapfile
       set showmatch
+      au BufRead,BufNewFile *.yml,*.yaml set filetype=yaml
+  
+
       let mapleader=","
       nmap <leader>w :wq<CR>
       ''; 
@@ -86,6 +89,7 @@
       vim-surround		 
       vim-lastplace
       vim-gitgutter
+      vim-yaml
     ];
   };
 }
