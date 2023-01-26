@@ -20,10 +20,11 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.packages = [
-    pkgs.tree
-    pkgs.gnupg
-    pkgs.ctags
+  home.packages = with pkgs; [
+    tree
+    gnupg
+    ctags
+    screen
   ];
   
   programs.bash = {
@@ -76,6 +77,8 @@
       set wildmenu
       set noswapfile
       set showmatch
+      let mapleader=","
+      nmap <leader>w :wq<CR>
       ''; 
 
     plugins = with pkgs.vimPlugins; [
