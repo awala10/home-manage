@@ -80,7 +80,7 @@
       au BufRead,BufNewFile *.yml,*.yaml set filetype=yaml
   
 
-      let mapleader=" "
+      let mapleader=","
       nmap <leader>w :wq<CR>
       ''; 
 
