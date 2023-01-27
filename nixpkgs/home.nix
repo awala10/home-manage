@@ -77,6 +77,7 @@
       set wildmenu
       set noswapfile
       set showmatch
+      set splitright
       au BufRead,BufNewFile *.yml,*.yaml set filetype=yaml
   
 
