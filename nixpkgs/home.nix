@@ -83,6 +83,7 @@
 
       let mapleader=","
       nmap <leader>w :wq<CR>
+      nmap <leader>! :q!<CR>
       ''; 
 
     plugins = with pkgs.vimPlugins; [
