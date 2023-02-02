@@ -1,7 +1,7 @@
 { config,  pkgs, ... }:
-  
- 
+
 {
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "awala";
@@ -26,21 +26,21 @@
     ctags
     screen
   ];
-  
   programs.bash = {
+
     enable = true;
     enableCompletion = true;
     historySize = 10000;
-    historyControl = [ 
+    historyControl = [
       "erasedups"
       "ignoredups"
       "ignorespace"
-    ]; 
+    ];
     historyIgnore = [
-      "ls *" 
-      "exit" 
-      "history *" 
-      "tree *" 
+      "ls *"
+      "exit"
+      "history *"
+      "tree *"
     ];
     bashrcExtra = ''
       shopt -s autocd
@@ -52,14 +52,14 @@
 #    enableAutosuggestions = true;
 #    enableCompletion = true;
 #    enableSyntaxHighlighting = true;
-#    autocd = true; 
+#    autocd = true;
 #    historySubstringSearch.searchDownKey = true;
-#  
-#  }; 
+#
+#  };
   programs.git = {
     enable = true;
     userName = "awala10";
-    userEmail = "khalad.awala@gmail.com"; 
+    userEmail = "khalad.awala@gmail.com";
   };
   programs.vim = {
     enable = true;
@@ -71,26 +71,29 @@
       set autoread
       set expandtab
       set autoindent
-      set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
       set number relativenumber
       set path+=**
+      set ruler
       set wildmenu
       set noswapfile
       set showmatch
       set splitright
       au BufRead,BufNewFile *.yml,*.yaml set filetype=yaml
-  
-
       let mapleader=","
       nmap <leader>w :wq<CR>
       nmap <leader>! :q!<CR>
-      ''; 
+      set list listchars+=eol:¬,trail:¶
+      let &t_SI="\e[6.q"
+      let &t_EI="\e[1.q"
+      autocmd BufWritePre * %s/\s\+$//e
+      '';
 
     plugins = with pkgs.vimPlugins; [
       vim-nix
-      vim-surround		 
+      vim-surround
       vim-lastplace
       vim-gitgutter
+      vim-better-whitespace
       vim-yaml
     ];
   };
