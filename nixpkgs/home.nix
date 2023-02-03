@@ -67,6 +67,7 @@
       vim-nix
       vim-airline
       vim-surround
+      gruvbox
       vim-lastplace
       vim-gitgutter
       vim-better-whitespace

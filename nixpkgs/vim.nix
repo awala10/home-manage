@@ -24,3 +24,4 @@
   autocmd BufWritePre * %s/\s\+$//e
   let g:airline_powerline_forts = 1
   let g:airline_theme='dark'
+  colorscheme gruvbox
