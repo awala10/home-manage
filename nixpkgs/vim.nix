@@ -1,5 +1,21 @@
+pkgs:
+
+{
+  enable = true;
+  plugins = with pkgs.vimPlugins; [
+    gruvbox
+    vim-nix
+    vim-airline
+    vim-surround
+    vim-lastplace
+    vim-gitgutter
+    vim-better-whitespace
+    vim-yaml
+  ];
+
+  extraConfig = ''
   syntax on
-  set background=dark
+  set background=dark"
   filetype plugin indent on
   set nocompatible
   set hlsearch
@@ -25,3 +41,5 @@
   let g:airline_powerline_forts = 1
   let g:airline_theme='dark'
   colorscheme gruvbox
+    '';
+  }

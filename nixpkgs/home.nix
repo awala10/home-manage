@@ -1,5 +1,7 @@
 { config,  pkgs, ... }:
-
+let
+  vimsettings = import ./vim.nix;
+in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -60,18 +62,6 @@
     userName = "awala10";
     userEmail = "khalad.awala@gmail.com";
   };
-  programs.vim = {
-    enable = true;
-    extraConfig = builtins.readFile ./vim.nix;
-    plugins = with pkgs.vimPlugins; [
-      vim-nix
-      vim-airline
-      vim-surround
-      gruvbox
-      vim-lastplace
-      vim-gitgutter
-      vim-better-whitespace
-      vim-yaml
-    ];
-  };
+  programs.vim = vimsettings pkgs;
+
 }
