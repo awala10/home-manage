@@ -15,7 +15,7 @@ pkgs:
 
   extraConfig = ''
   syntax on
-  set background=dark"
+  set background=dark
   filetype plugin indent on
   set nocompatible
   set hlsearch
@@ -32,12 +32,14 @@ pkgs:
   au BufRead,BufNewFile *.yml,*.yaml set filetype=yaml
   let mapleader=","
   set cursorline
+
   nmap <leader>w :wq<CR>
   nmap <leader>q :q!<CR>
   set list listchars+=eol:¬,trail:¶
   let &t_SI="\e[6.q"
   let &t_EI="\e[1.q"
   autocmd BufWritePre * %s/\s\+$//e
+
   let g:airline_powerline_forts = 1
   let g:airline_theme='dark'
   colorscheme gruvbox
