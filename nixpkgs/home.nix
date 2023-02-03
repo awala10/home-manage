@@ -1,7 +1,6 @@
 { config,  pkgs, ... }:
 
 {
-
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "awala";
@@ -63,31 +62,7 @@
   };
   programs.vim = {
     enable = true;
-    extraConfig = ''
-      syntax on
-      filetype plugin indent on
-      set nocompatible
-      set hlsearch
-      set autoread
-      set expandtab
-      set autoindent
-      set number relativenumber
-      set path+=**
-      set ruler
-      set wildmenu
-      set noswapfile
-      set showmatch
-      set splitright
-      au BufRead,BufNewFile *.yml,*.yaml set filetype=yaml
-      let mapleader=","
-      nmap <leader>w :wq<CR>
-      nmap <leader>! :q!<CR>
-      set list listchars+=eol:¬,trail:¶
-      let &t_SI="\e[6.q"
-      let &t_EI="\e[1.q"
-      autocmd BufWritePre * %s/\s\+$//e
-      '';
-
+    extraConfig = builtins.readFile ./vim.nix;
     plugins = with pkgs.vimPlugins; [
       vim-nix
       vim-surround
