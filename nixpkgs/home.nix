@@ -1,6 +1,7 @@
 { config,  pkgs, ... }:
 let
   vimsettings = import ./vim.nix;
+  packages =  import ./packages.nix;
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -21,12 +22,8 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.packages = with pkgs; [
-    tree
-    gnupg
-    ctags
-    screen
-  ];
+  home.packages = packages pkgs;
+
   programs.bash = {
 
     enable = true;
