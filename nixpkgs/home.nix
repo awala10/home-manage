@@ -65,6 +65,7 @@
     extraConfig = builtins.readFile ./vim.nix;
     plugins = with pkgs.vimPlugins; [
       vim-nix
+      vim-airline
       vim-surround
       vim-lastplace
       vim-gitgutter
