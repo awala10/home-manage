@@ -34,7 +34,7 @@ pkgs:
   set cursorline
 
   nmap <leader>w :wq<CR>
-  nmap <leader>q :q!<CR>
+  nmap <leader>! :q!<CR>
   set list listchars+=eol:¬,trail:¶
   let &t_SI="\e[6.q"
   let &t_EI="\e[1.q"
