@@ -1,7 +1,8 @@
 { config,  pkgs, ... }:
 let
   vimsettings = import ./vim.nix;
-  packages =  import ./packages.nix;
+  packages =  import ./packages.nix pkgs;
+  bashsettings = import ./bash.nix pkgs;
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -22,29 +23,10 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.packages = packages pkgs;
+  home.packages = packages;
 
-  programs.bash = {
+  programs.bash = bashsettings; # {
 
-    enable = true;
-    enableCompletion = true;
-    historySize = 10000;
-    historyControl = [
-      "erasedups"
-      "ignoredups"
-      "ignorespace"
-    ];
-    historyIgnore = [
-      "ls *"
-      "exit"
-      "history *"
-      "tree *"
-    ];
-    bashrcExtra = ''
-      shopt -s autocd
-      set -o vi
-      '';
-  };
 #  programs.zsh = {
 #    enable = true;
 #    enableAutosuggestions = true;

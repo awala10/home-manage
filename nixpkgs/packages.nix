@@ -3,4 +3,5 @@ pkgs: with pkgs; [
   ctags
   gnupg
   tree
+  ansible
 ]
