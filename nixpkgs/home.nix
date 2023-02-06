@@ -44,10 +44,5 @@ in
 #    historySubstringSearch.searchDownKey = true;
 #
 #  };
-#  programs.git = {
-#    enable = true;
-#    userName = "awala10";
-#    userEmail = "khalad.awala@gmail.com";
-#  };
 
 }
