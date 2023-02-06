@@ -23,10 +23,16 @@ in
   # changes in each release.
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  programs.bash = bashsettings;
-  programs.vim = vimsettings pkgs;
+  programs = {
+    home-manager.enable = true;
+    bash = bashsettings;
+    vim = vimsettings pkgs;
+    git = {
+      enable = true;
+      userName = "awala10";
+      userEmail = "khalad.awala@gmail.com";
+    };
+  };
 #  programs.zsh = {
 #    enable = true;
 #    enableAutosuggestions = true;
@@ -36,10 +42,10 @@ in
 #    historySubstringSearch.searchDownKey = true;
 #
 #  };
-  programs.git = {
-    enable = true;
-    userName = "awala10";
-    userEmail = "khalad.awala@gmail.com";
-  };
+#  programs.git = {
+#    enable = true;
+#    userName = "awala10";
+#    userEmail = "khalad.awala@gmail.com";
+#  };
 
 }
