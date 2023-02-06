@@ -24,9 +24,8 @@ in
   programs.home-manager.enable = true;
 
   home.packages = packages;
-
-  programs.bash = bashsettings; # {
-
+  programs.bash = bashsettings;
+  programs.vim = vimsettings pkgs;
 #  programs.zsh = {
 #    enable = true;
 #    enableAutosuggestions = true;
@@ -41,6 +40,5 @@ in
     userName = "awala10";
     userEmail = "khalad.awala@gmail.com";
   };
-  programs.vim = vimsettings pkgs;
 
 }
