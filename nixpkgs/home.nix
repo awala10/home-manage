@@ -24,7 +24,9 @@ in
 
   # Let Home Manager install and manage itself.
   programs = {
-    home-manager.enable = true;
+    home-manager = {
+      enable = true;
+    };
     bash = bashsettings;
     vim = vimsettings pkgs;
     git = {
