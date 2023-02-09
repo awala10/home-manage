@@ -9,7 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-
+  boot.kernelPackages =  pkgs.linuxPackages_latest;
+  boot.loader.grub.configurationLimit = 10;
   # Use the extlinux boot loader. (NixOS wants to enable GRUB by default)
   boot.loader.grub.enable = false;
   # Enables the generation of /boot/extlinux/extlinux.conf
@@ -18,10 +19,10 @@
   networking.hostName = "nixos-pi"; # Define your hostname.
   # Pick only one of the below networking options.
   networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.wireless.networks.TMNL-494231.pskRaw = "e54ebaded77f1644eace74ca85ec8ef0202816fe6dc37164897290a985f253c0"; 
+  networking.wireless.networks.TMNL-494231.pskRaw = "e54ebaded77f1644eace74ca85ec8ef0202816fe6dc37164897290a985f253c0";
   systemd.services.nix-gc.unitConfig.ConditionACPower = true;
   # services.unclutter.package = true;
-  environment.variables = { EDITOR = "vim"; }; 
+  environment.variables = { EDITOR = "vim"; };
   programs.vim.defaultEditor = true;
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
@@ -42,20 +43,24 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-    
+
   # nix.gc.automatic = true;
   # nix.gc.dates = "daily";
   nix.gc = {
     automatic = true;
     dates = "weekly";
-  }; 
+  };
   system.autoUpgrade = {
     enable = true;
     allowReboot = true;
-  
+
   };
-  nix.settings = { 
+  nix.settings = {
     auto-optimise-store = true;
+    experimental-features = [
+      " nix-command "
+      " flakes "
+    ];
   };
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -108,9 +113,8 @@
     };
     extraConfig = ''
        Match Address 192.168.178.0/24
-       #PasswordAuthentication yes
-       AllowUsers  [ "awala" "kawala" ]  
-      ''; 
+       AllowUsers  [ "awala" "kawala" ]
+      '';
   };
 #    fileSystems."/export/sen" = {
 #      device = "/mnt/sen";
@@ -118,10 +122,10 @@
 #    };
   services.nfs.server = {
     enable = true;
-    exports = 
-      '' 
-      #/export 192.168.178.0/24 (rw,fsid=0,no_subtree_check) 
-      /export 192.168.178.0/24 (rw,sync,no_root_squash,no_subtree_check)  #(rw,no_subtree_check) 
+    exports =
+      ''
+      #/export 192.168.178.0/24 (rw,fsid=0,no_subtree_check)
+      /export 192.168.178.0/24 (rw,sync,no_root_squash,no_subtree_check)  #(rw,no_subtree_check)
       #/export/sen 192.168.178.0/24 #(rw,sync,no_root_squash,no_subtree_check) #(rw,nohide,no_subtree_check)
       #/export/sen 192.168.178.0/24 (rw,nohide,insecure,no_subtree_check)
      '';

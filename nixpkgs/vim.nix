@@ -11,6 +11,8 @@ pkgs:
     vim-gitgutter
     vim-better-whitespace
     vim-yaml
+    vim-fugitive
+    # vim-one
   ];
 
   extraConfig = ''
