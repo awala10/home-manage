@@ -43,5 +43,4 @@ in
 #    historySubstringSearch.searchDownKey = true;
 #
 #  };
-
 }
