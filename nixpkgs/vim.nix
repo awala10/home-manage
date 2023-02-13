@@ -41,6 +41,7 @@ pkgs:
     nnoremap <leader>f <c-w>f
     inoremap kj <esc>
     vnoremap kj <esc>
+    vnoremap <space> :
     set list listchars+=eol:¬,trail:¶
     let &t_SI="\e[6.q"
     let &t_EI="\e[1.q"
