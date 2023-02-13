@@ -12,6 +12,7 @@ pkgs:
     vim-better-whitespace
     vim-yaml
     vim-fugitive
+    nord-vim
     # vim-one
   ];
 
