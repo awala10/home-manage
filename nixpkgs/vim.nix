@@ -36,12 +36,14 @@ pkgs:
     let mapleader=","
     set cursorline
 
+
     nmap <leader>w :wq<CR>
     nmap <leader>q :q!<CR>
     nmap <leader>bn :bn<CR>
     nnoremap <leader>f <c-w>f
     inoremap kj <esc>
     vnoremap kj <esc>
+    nnoremap <spac> :
     set list listchars+=eol:¬,trail:¶
     let &t_SI="\e[6.q"
     let &t_EI="\e[1.q"
