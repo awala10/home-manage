@@ -36,7 +36,6 @@ pkgs:
     let mapleader=","
     set cursorline
 
-
     nmap <leader>w :wq<CR>
     nmap <leader>q :q!<CR>
     nmap <leader>bn :bn<CR>
