@@ -27,7 +27,7 @@
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-    time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Europe/Amsterdam";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -44,24 +44,27 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-  # nix.gc.automatic = true;
-  # nix.gc.dates = "daily";
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-  };
   system.autoUpgrade = {
     enable = true;
     allowReboot = true;
 
   };
-  nix.settings = {
-    auto-optimise-store = true;
-    experimental-features = [
-      " nix-command "
-      " flakes "
-    ];
-  };
+  nix  = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+    settings = {
+      auto-optimise-store = true;
+    };
+    extraOptions = "experimental-features = nix-command flakes";
+#      [
+#      " nix-command "
+#      " flakes "
+#      ];
+
+   };
   # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = {
@@ -87,7 +90,6 @@
       packages = with pkgs; [
     ];
   };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
     environment.systemPackages = with pkgs; [
@@ -108,12 +110,13 @@
   services.openssh = {
     enable = true;
     settings = {
-    passwordAuthentication = false;
-    kbdInteractiveAuthentication = false;
+      PasswordAuthentication = false;
+      kbdInteractiveAuthentication = false;
     };
     extraConfig = ''
        Match Address 192.168.178.0/24
-       AllowUsers  [ "awala" "kawala" ]
+       PasswordAuthentication yes
+       AllowUsers awala kawala
       '';
   };
 #    fileSystems."/export/sen" = {
@@ -131,7 +134,7 @@
      '';
   };
   # Open ports in the firewall.
-    networking.firewall.allowedTCPPorts = [ 88 2049 ];
+    networking.firewall.allowedTCPPorts = [ 2049 ];
     networking.firewall.allowPing = false;
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
