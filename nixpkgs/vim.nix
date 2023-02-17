@@ -35,6 +35,7 @@ pkgs:
     au BufRead,BufNewFile *.yml,*.yaml set filetype=yaml
     let mapleader=","
     set cursorline
+    set scrolloff=5
 
     nmap <leader>w :wq<CR>
     nmap <leader>q :q!<CR>
