@@ -4,4 +4,5 @@ pkgs: with pkgs; [
   gnupg
   tree
   ansible
+  tcpdump
 ]
