@@ -4,4 +4,8 @@ pkgs: with pkgs; [
   gnupg
   tree
   ansible
+  # network tools
+  tcpdump
+  iperf
+  dig
 ]
