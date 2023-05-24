@@ -8,4 +8,5 @@ pkgs: with pkgs; [
   tcpdump
   iperf
   dig
+  openssl
 ]
