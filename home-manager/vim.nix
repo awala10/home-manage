@@ -13,6 +13,7 @@ pkgs:
     vim-yaml
     vim-fugitive
     nord-vim
+    vim-terraform
     # vim-one
   ];
 

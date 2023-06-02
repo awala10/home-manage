@@ -9,4 +9,6 @@ pkgs: with pkgs; [
   iperf
   dig
   openssl
+  # Dev tools
+  terraform
 ]
