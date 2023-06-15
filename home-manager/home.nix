@@ -11,7 +11,7 @@ in
     username = "awala";
     homeDirectory = "/home/awala";
     packages = packages;
-    stateVersion = "22.11";
+    stateVersion = "23.05";
   };
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

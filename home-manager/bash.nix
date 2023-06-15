@@ -1,6 +1,7 @@
 pkgs: {
   enable = true;
   enableCompletion = true;
+  #enableLsColors =true;
   historySize = 10000;
   historyControl = [
     "erasedups"

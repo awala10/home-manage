@@ -14,6 +14,7 @@ pkgs:
     vim-fugitive
     nord-vim
     vim-terraform
+    YouCompleteMe
     # vim-one
   ];
 
@@ -49,7 +50,6 @@ pkgs:
     let &t_SI="\e[6.q"
     let &t_EI="\e[1.q"
     autocmd BufWritePre * %s/\s\+$//e
-
     let g:airline_powerline_forts = 1
     let g:airline_theme='dark'
     colorscheme gruvbox

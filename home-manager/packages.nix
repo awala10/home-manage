@@ -3,7 +3,6 @@ pkgs: with pkgs; [
   ctags
   gnupg
   tree
-  ansible
   # network tools
   tcpdump
   iperf
@@ -11,4 +10,5 @@ pkgs: with pkgs; [
   openssl
   # Dev tools
   terraform
+  ansible
 ]
