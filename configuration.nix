@@ -58,7 +58,7 @@
     settings = {
       auto-optimise-store = true;
     };
-    extraOptions = "experimental-features = nix-command flakes";
+#    extraOptions = "experimental-features = nix-command flakes";
 #      [
 #      " nix-command "
 #      " flakes "
@@ -111,7 +111,7 @@
     enable = true;
     settings = {
       PasswordAuthentication = false;
-      kbdInteractiveAuthentication = false;
+      KbdInteractiveAuthentication = false;
     };
     extraConfig = ''
        Match Address 192.168.178.0/24
