@@ -21,5 +21,6 @@ pkgs: {
   initExtra = ''
     set -o vi
     export EDITOR=vim
+    [[ $TERM != "screen" ]] && exec tmux
     '';
   }

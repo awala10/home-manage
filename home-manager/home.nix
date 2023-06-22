@@ -2,7 +2,8 @@
 let
   vimsettings = import ./vim.nix;
   packages =  import ./packages.nix pkgs;
-  bashsettings = import ./bash.nix pkgs;
+  bashsettings = import ./bash.nix;
+  tmuxConf = import ./tmux.nix;
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -26,8 +27,9 @@ in
     home-manager = {
       enable = true;
     };
-    bash = bashsettings;
+    bash = bashsettings pkgs;
     vim = vimsettings pkgs;
+    tmux = tmuxConf pkgs;
     git = {
       enable = true;
       userName = "awala10";
