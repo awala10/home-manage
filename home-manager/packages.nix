@@ -8,6 +8,7 @@ pkgs: with pkgs; [
   iperf
   dig
   openssl
+  wakeonlan
   # Dev tools
   terraform
   ansible
