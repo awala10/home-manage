@@ -31,3 +31,5 @@
   let g:airline_powerline_forts = 1
   let g:airline_theme='dark'
   colorscheme gruvbox
+  "remove hightlight from world on ENTER when searching.
+  nnoremap <silent><CR> :noh<CR>
