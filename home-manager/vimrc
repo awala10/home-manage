@@ -13,7 +13,7 @@
   set noswapfile
   set showmatch
   set splitright
-  au BufRead,BufNewFile *.yml,*.yaml set filetype=yaml
+  auto FileType yaml, terraform setlocal ts=2 sts=2 sw=2 expandtab
   let mapleader=","
   set cursorline
   set scrolloff=5
