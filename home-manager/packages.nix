@@ -4,6 +4,7 @@ pkgs: with pkgs; [
   gnupg
   tree
   # network tools
+  nmap
   tcpdump
   iperf
   dig

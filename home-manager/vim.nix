@@ -14,7 +14,7 @@ pkgs:
     vim-fugitive
     nord-vim
     vim-terraform
-#    YouCompleteMe
+#   YouCompleteMe
     # vim-one
   ];
 
