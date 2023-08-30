@@ -2,11 +2,11 @@ pkgs: with pkgs; [
   screen
   ctags
   gnupg
-  tree
   exa
   # network tools
   nmap
   tcpdump
+  mtr
   iperf
   dig
   openssl
