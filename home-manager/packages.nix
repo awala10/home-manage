@@ -3,6 +3,7 @@ pkgs: with pkgs; [
   ctags
   gnupg
   tree
+  exa
   # network tools
   nmap
   tcpdump
