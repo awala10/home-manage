@@ -15,6 +15,9 @@ pkgs: {
     "tree *"
     "cd *"
   ];
+  shellAliases = {
+    ls = "exa -l --icons";
+  };
   bashrcExtra = ''
     shopt -s autocd
       '';
