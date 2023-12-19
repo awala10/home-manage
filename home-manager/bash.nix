@@ -16,7 +16,7 @@ pkgs: {
     "cd *"
   ];
   shellAliases = {
-    ls = "exa -l --icons";
+    #ls = "exa -l --icons";
   };
   bashrcExtra = ''
     shopt -s autocd
@@ -24,6 +24,6 @@ pkgs: {
   initExtra = ''
     set -o vi
     export EDITOR=vim
-    #[[ $TERM != "screen" ]] && exec tmux
+    [[ $TERM != "screen" ]] && exec tmux
     '';
   }

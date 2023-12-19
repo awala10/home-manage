@@ -2,7 +2,6 @@ pkgs: with pkgs; [
   screen
   ctags
   gnupg
-  exa
   # network tools
   nmap
   tcpdump
@@ -13,10 +12,11 @@ pkgs: with pkgs; [
   wavemon
   openssl
   wakeonlan
+  minicom
   # Dev tools
-  terraform
   ansible
   # man page
   tldr
   jq
+
 ]
