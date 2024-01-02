@@ -18,5 +18,4 @@ pkgs: with pkgs; [
   # man page
   tldr
   jq
-
 ]

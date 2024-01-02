@@ -43,6 +43,5 @@ in
 #    enableSyntaxHighlighting = true;
 #    autocd = true;
 #    historySubstringSearch.searchDownKey = true;
-#
 #  };
 }
