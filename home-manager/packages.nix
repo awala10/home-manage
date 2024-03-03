@@ -5,7 +5,6 @@ pkgs: with pkgs; [
   # network tools
   nmap
   tcpdump
-  tshark
   mtr
   iperf
   dig
