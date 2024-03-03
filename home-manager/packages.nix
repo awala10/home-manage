@@ -1,5 +1,5 @@
 pkgs: with pkgs; [
-  screen
+  #screen
   ctags
   gnupg
   # network tools
