@@ -134,8 +134,8 @@
      '';
   };
   # Open ports in the firewall.
-    networking.firewall.allowedTCPPorts = [ 2049 ];
-    networking.firewall.allowPing = false;
+  #  networking.firewall.allowedTCPPorts = [ 2049 ];
+  #  networking.firewall.allowPing = false;
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
