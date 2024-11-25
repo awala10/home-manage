@@ -32,8 +32,8 @@ in
     tmux = tmuxConf pkgs;
     git = {
       enable = true;
-      userName = "awala10";
-      userEmail = "khalad.awala@gmail.com";
+      userName = "xxxxxxxxx";
+      userEmail = "xxxxxxxxxxxxxx";
     };
   };
 #  programs.zsh = {
